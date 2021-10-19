@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var homePresenter: HomePresenter
     var body: some View {
         TabView {
             NavigationView {
-              HomeView()
+              HomeView(presenter: homePresenter)
             }.tabItem {
               TabBarIcon(imageName: "house", title: "Home")
             }
             NavigationView {
-              HomeView()
+              SearchView()
             }.tabItem {
               TabBarIcon(imageName: "magnifyingglass", title: "Search")
             }
             NavigationView {
-              HomeView()
+              CartView()
             }.tabItem {
               TabBarIcon(imageName: "cart", title: "Cart")
             }
