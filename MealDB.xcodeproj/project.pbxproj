@@ -18,6 +18,17 @@
 		D0509E65271BEDFE0053CD71 /* HomeVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E64271BEDFE0053CD71 /* HomeVIew.swift */; };
 		D0509E69271BEE320053CD71 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E68271BEE320053CD71 /* SearchView.swift */; };
 		D0509E6C271BEE670053CD71 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E6B271BEE670053CD71 /* CartView.swift */; };
+		D095E735271EE690004AB621 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E734271EE690004AB621 /* CategoriesResponse.swift */; };
+		D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E736271EE6F9004AB621 /* RemoteDataSource.swift */; };
+		D095E73A271EE7C4004AB621 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D095E739271EE7C4004AB621 /* Alamofire */; };
+		D095E73F271EE9D6004AB621 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E73E271EE9D6004AB621 /* ApiCall.swift */; };
+		D095E742271EEBBC004AB621 /* CustomError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E741271EEBBC004AB621 /* CustomError+Ext.swift */; };
+		D095E746271EED53004AB621 /* MealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E745271EED53004AB621 /* MealRepository.swift */; };
+		D095E74A271EEDB8004AB621 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E749271EEDB8004AB621 /* Category.swift */; };
+		D095E74D271EEF08004AB621 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E74C271EEF07004AB621 /* CategoryMapper.swift */; };
+		D095E750271EF0A1004AB621 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E74F271EF0A1004AB621 /* HomeInteractor.swift */; };
+		D095E753271EF17A004AB621 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E752271EF17A004AB621 /* Injection.swift */; };
+		D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E756271EF2D4004AB621 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +63,16 @@
 		D0509E64271BEDFE0053CD71 /* HomeVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIew.swift; sourceTree = "<group>"; };
 		D0509E68271BEE320053CD71 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D0509E6B271BEE670053CD71 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		D095E734271EE690004AB621 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		D095E736271EE6F9004AB621 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		D095E73E271EE9D6004AB621 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
+		D095E741271EEBBC004AB621 /* CustomError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomError+Ext.swift"; sourceTree = "<group>"; };
+		D095E745271EED53004AB621 /* MealRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRepository.swift; sourceTree = "<group>"; };
+		D095E749271EEDB8004AB621 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D095E74C271EEF07004AB621 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
+		D095E74F271EF0A1004AB621 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		D095E752271EF17A004AB621 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		D095E756271EF2D4004AB621 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D095E73A271EE7C4004AB621 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +124,11 @@
 		D0509E34271BD9C20053CD71 /* MealDB */ = {
 			isa = PBXGroup;
 			children = (
-				D0509E63271BEDF10053CD71 /* Module */,
 				D0509E5F271BE14F0053CD71 /* App */,
-				D0509E39271BD9C40053CD71 /* Assets.xcassets */,
+				D095E730271EE5E4004AB621 /* Core */,
+				D0509E63271BEDF10053CD71 /* Module */,
 				D0509E3B271BD9C40053CD71 /* Preview Content */,
+				D095E73B271EE96F004AB621 /* Supporting Files */,
 			);
 			path = MealDB;
 			sourceTree = "<group>";
@@ -158,7 +181,8 @@
 		D0509E66271BEE180053CD71 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D0509E64271BEDFE0053CD71 /* HomeVIew.swift */,
+				D095E755271EF2B0004AB621 /* Presenter */,
+				D095E754271EF2A8004AB621 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -179,6 +203,134 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		D095E730271EE5E4004AB621 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D095E731271EE5EC004AB621 /* Data */,
+				D095E751271EF162004AB621 /* DI */,
+				D095E747271EEDA3004AB621 /* Domain */,
+				D095E73C271EE9C0004AB621 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D095E731271EE5EC004AB621 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D095E732271EE5F8004AB621 /* Remote */,
+				D095E745271EED53004AB621 /* MealRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D095E732271EE5F8004AB621 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D095E733271EE605004AB621 /* Response */,
+				D095E736271EE6F9004AB621 /* RemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D095E733271EE605004AB621 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D095E734271EE690004AB621 /* CategoriesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D095E73B271EE96F004AB621 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0509E39271BD9C40053CD71 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D095E73C271EE9C0004AB621 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D095E74B271EEEED004AB621 /* Mapper */,
+				D095E740271EEB9C004AB621 /* Extension */,
+				D095E73D271EE9CC004AB621 /* Network */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D095E73D271EE9CC004AB621 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D095E73E271EE9D6004AB621 /* ApiCall.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D095E740271EEB9C004AB621 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D095E741271EEBBC004AB621 /* CustomError+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D095E747271EEDA3004AB621 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D095E74E271EF095004AB621 /* UseCase */,
+				D095E748271EEDAE004AB621 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D095E748271EEDAE004AB621 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D095E749271EEDB8004AB621 /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D095E74B271EEEED004AB621 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D095E74C271EEF07004AB621 /* CategoryMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D095E74E271EF095004AB621 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				D095E74F271EF0A1004AB621 /* HomeInteractor.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D095E751271EF162004AB621 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				D095E752271EF17A004AB621 /* Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		D095E754271EF2A8004AB621 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0509E64271BEDFE0053CD71 /* HomeVIew.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D095E755271EF2B0004AB621 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D095E756271EF2D4004AB621 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +347,9 @@
 			dependencies = (
 			);
 			name = MealDB;
+			packageProductDependencies = (
+				D095E739271EE7C4004AB621 /* Alamofire */,
+			);
 			productName = MealDB;
 			productReference = D0509E32271BD9C20053CD71 /* MealDB.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +422,9 @@
 				Base,
 			);
 			mainGroup = D0509E29271BD9C20053CD71;
+			packageReferences = (
+				D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D0509E33271BD9C20053CD71 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,12 +467,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D095E753271EF17A004AB621 /* Injection.swift in Sources */,
 				D0509E6C271BEE670053CD71 /* CartView.swift in Sources */,
+				D095E742271EEBBC004AB621 /* CustomError+Ext.swift in Sources */,
 				D0509E69271BEE320053CD71 /* SearchView.swift in Sources */,
 				D0509E61271BE16A0053CD71 /* TabBarIcon.swift in Sources */,
+				D095E746271EED53004AB621 /* MealRepository.swift in Sources */,
 				D0509E65271BEDFE0053CD71 /* HomeVIew.swift in Sources */,
 				D0509E38271BD9C20053CD71 /* ContentView.swift in Sources */,
+				D095E735271EE690004AB621 /* CategoriesResponse.swift in Sources */,
+				D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */,
+				D095E74D271EEF08004AB621 /* CategoryMapper.swift in Sources */,
+				D095E73F271EE9D6004AB621 /* ApiCall.swift in Sources */,
 				D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */,
+				D095E74A271EEDB8004AB621 /* Category.swift in Sources */,
+				D095E750271EF0A1004AB621 /* HomeInteractor.swift in Sources */,
+				D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +825,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D095E739271EE7C4004AB621 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0509E2A271BD9C20053CD71 /* Project object */;
 }
