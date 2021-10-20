@@ -29,6 +29,11 @@
 		D095E750271EF0A1004AB621 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E74F271EF0A1004AB621 /* HomeInteractor.swift */; };
 		D095E753271EF17A004AB621 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E752271EF17A004AB621 /* Injection.swift */; };
 		D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E756271EF2D4004AB621 /* HomePresenter.swift */; };
+		D095E759271FFE92004AB621 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E758271FFE92004AB621 /* CategoryRow.swift */; };
+		D095E75C271FFEF9004AB621 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D095E75B271FFEF9004AB621 /* SDWebImageSwiftUI */; };
+		D095E75F27200A7A004AB621 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E75E27200A7A004AB621 /* ActivityIndicator.swift */; };
+		D095E76127200AD9004AB621 /* CustomEmptyIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E76027200AD9004AB621 /* CustomEmptyIndicator.swift */; };
+		D095E76427200C8C004AB621 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E76327200C8C004AB621 /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,10 @@
 		D095E74F271EF0A1004AB621 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		D095E752271EF17A004AB621 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		D095E756271EF2D4004AB621 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		D095E758271FFE92004AB621 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		D095E75E27200A7A004AB621 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		D095E76027200AD9004AB621 /* CustomEmptyIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyIndicator.swift; sourceTree = "<group>"; };
+		D095E76327200C8C004AB621 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D095E75C271FFEF9004AB621 /* SDWebImageSwiftUI in Frameworks */,
 				D095E73A271EE7C4004AB621 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +181,7 @@
 		D0509E63271BEDF10053CD71 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D095E75D27200A5C004AB621 /* Common */,
 				D0509E6A271BEE470053CD71 /* Cart */,
 				D0509E67271BEE250053CD71 /* Search */,
 				D0509E66271BEE180053CD71 /* Home */,
@@ -319,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				D0509E64271BEDFE0053CD71 /* HomeVIew.swift */,
+				D095E758271FFE92004AB621 /* CategoryRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +341,24 @@
 				D095E756271EF2D4004AB621 /* HomePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D095E75D27200A5C004AB621 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D095E76227200C63004AB621 /* Color */,
+				D095E75E27200A7A004AB621 /* ActivityIndicator.swift */,
+				D095E76027200AD9004AB621 /* CustomEmptyIndicator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D095E76227200C63004AB621 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				D095E76327200C8C004AB621 /* CustomColor.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +379,7 @@
 			name = MealDB;
 			packageProductDependencies = (
 				D095E739271EE7C4004AB621 /* Alamofire */,
+				D095E75B271FFEF9004AB621 /* SDWebImageSwiftUI */,
 			);
 			productName = MealDB;
 			productReference = D0509E32271BD9C20053CD71 /* MealDB.app */;
@@ -424,6 +455,7 @@
 			mainGroup = D0509E29271BD9C20053CD71;
 			packageReferences = (
 				D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D095E75A271FFEF9004AB621 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = D0509E33271BD9C20053CD71 /* Products */;
 			projectDirPath = "";
@@ -474,7 +506,9 @@
 				D0509E61271BE16A0053CD71 /* TabBarIcon.swift in Sources */,
 				D095E746271EED53004AB621 /* MealRepository.swift in Sources */,
 				D0509E65271BEDFE0053CD71 /* HomeVIew.swift in Sources */,
+				D095E76127200AD9004AB621 /* CustomEmptyIndicator.swift in Sources */,
 				D0509E38271BD9C20053CD71 /* ContentView.swift in Sources */,
+				D095E759271FFE92004AB621 /* CategoryRow.swift in Sources */,
 				D095E735271EE690004AB621 /* CategoriesResponse.swift in Sources */,
 				D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */,
 				D095E74D271EEF08004AB621 /* CategoryMapper.swift in Sources */,
@@ -482,6 +516,8 @@
 				D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */,
 				D095E74A271EEDB8004AB621 /* Category.swift in Sources */,
 				D095E750271EF0A1004AB621 /* HomeInteractor.swift in Sources */,
+				D095E75F27200A7A004AB621 /* ActivityIndicator.swift in Sources */,
+				D095E76427200C8C004AB621 /* CustomColor.swift in Sources */,
 				D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,6 +871,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		D095E75A271FFEF9004AB621 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -842,6 +886,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		D095E75B271FFEF9004AB621 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D095E75A271FFEF9004AB621 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
