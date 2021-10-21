@@ -10,41 +10,36 @@ import SDWebImageSwiftUI
 
 struct CategoryRow: View {
     var category: Category
+    @ObservedObject var presenter: HomePresenter
     var body: some View {
         VStack(alignment: .leading) {
-            content
+            categoryView
         }
     }
 }
 
 extension CategoryRow {
-    var content: some View {
-        HStack {
-            WebImage(url: URL(string: category.image))
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40, height: 40)
-                .cornerRadius(16)
+    var categoryView: some View {
+        Button(action: {
+            self.presenter.getFilterCategories(category: category.title)
+        }){
+            HStack {
+                WebImage(url: URL(string: category.image))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .cornerRadius(16)
+                
+                Text(category.title)
+                    .bold()
+                    .foregroundColor(self.presenter.categorySelected == category.title ? .white : .black)
+            }
+            .padding(.horizontal,8)
+            .padding(.vertical, 8)
+            .background(self.presenter.categorySelected == category.title ? Color.red : CustomColor.lightGrey)
+            .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
             
-            Text(category.title)
-                .bold()
-                .foregroundColor(.black)
         }
-        .padding(.horizontal,16)
-        .padding(.vertical, 8)
-        .background(CustomColor.lightGrey)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
-        
     }
-}
-
-struct CategoryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryRow(
-            category: Category(
-                id: "1",
-                title: "Beef",
-                image: "https://www.themealdb.com/images/category/beef.png",
-                description: ""))
-    }
+    
 }
