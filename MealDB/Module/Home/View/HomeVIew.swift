@@ -22,6 +22,7 @@ struct HomeView: View {
             }
         }.onAppear{
             self.presenter.getCategories()
+            self.presenter.getFilterCategories()
         }
     }
 }

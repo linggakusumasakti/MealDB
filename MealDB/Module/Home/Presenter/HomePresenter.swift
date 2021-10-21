@@ -14,12 +14,13 @@ class HomePresenter: ObservableObject {
     private let homeUseCase: HomeUseCase
     
     @Published var categories: [Category] = []
+    @Published var meals: [Meal] = []
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
     
     init(homeUseCase: HomeUseCase) {
-      self.homeUseCase = homeUseCase
+        self.homeUseCase = homeUseCase
     }
     
     func getCategories(){
@@ -38,6 +39,26 @@ class HomePresenter: ObservableObject {
                 }
             }, receiveValue: { categories in
                 self.categories = categories
+            })
+            .store(in: &cancellables)
+    }
+    
+    func getFilterCategories() {
+        isLoading = true
+        homeUseCase.getFilterCategories(category: "Beef")
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    self.isError = true
+                    self.isLoading = false
+                    
+                case .finished:
+                    self.isLoading = false
+                }
+            }, receiveValue: { meals in
+                self.meals = meals
             })
             .store(in: &cancellables)
     }
