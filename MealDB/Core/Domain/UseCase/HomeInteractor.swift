@@ -11,6 +11,7 @@ import UIKit
 
 protocol HomeUseCase {
     func getCategories() -> AnyPublisher<[Category],Error>
+    func getFilterCategories(category: String) -> AnyPublisher<[Meal], Error>
 }
 
 class HomeInteractor: HomeUseCase {
@@ -23,5 +24,9 @@ class HomeInteractor: HomeUseCase {
     
     func getCategories() -> AnyPublisher<[Category], Error> {
         return repository.getCategories()
+    }
+    
+    func getFilterCategories(category: String) -> AnyPublisher<[Meal], Error> {
+        return repository.getFilterCategories(category: category)
     }
 }

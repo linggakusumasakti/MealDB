@@ -18,11 +18,14 @@ protocol Endpoint {
 enum Endpoints {
     enum Gets: Endpoint {
         case categories
+        case filterCategories
         
         public var url: String {
             switch self {
             case .categories:
                 return "\(APICall.baseUrl)categories.php"
+            case .filterCategories:
+                return "\(APICall.baseUrl)filter.php?c="
             }
         }
     }

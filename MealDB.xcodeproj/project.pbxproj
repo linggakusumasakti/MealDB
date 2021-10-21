@@ -18,6 +18,8 @@
 		D0509E65271BEDFE0053CD71 /* HomeVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E64271BEDFE0053CD71 /* HomeVIew.swift */; };
 		D0509E69271BEE320053CD71 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E68271BEE320053CD71 /* SearchView.swift */; };
 		D0509E6C271BEE670053CD71 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E6B271BEE670053CD71 /* CartView.swift */; };
+		D06BC8A12721547700BEC11B /* MealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BC8A02721547700BEC11B /* MealsResponse.swift */; };
+		D06BC8A3272190F700BEC11B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06BC8A2272190F700BEC11B /* Meal.swift */; };
 		D095E735271EE690004AB621 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E734271EE690004AB621 /* CategoriesResponse.swift */; };
 		D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095E736271EE6F9004AB621 /* RemoteDataSource.swift */; };
 		D095E73A271EE7C4004AB621 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D095E739271EE7C4004AB621 /* Alamofire */; };
@@ -68,6 +70,8 @@
 		D0509E64271BEDFE0053CD71 /* HomeVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIew.swift; sourceTree = "<group>"; };
 		D0509E68271BEE320053CD71 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D0509E6B271BEE670053CD71 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		D06BC8A02721547700BEC11B /* MealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsResponse.swift; sourceTree = "<group>"; };
+		D06BC8A2272190F700BEC11B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		D095E734271EE690004AB621 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		D095E736271EE6F9004AB621 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		D095E73E271EE9D6004AB621 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				D095E734271EE690004AB621 /* CategoriesResponse.swift */,
+				D06BC8A02721547700BEC11B /* MealsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				D095E749271EEDB8004AB621 /* Category.swift */,
+				D06BC8A2272190F700BEC11B /* Meal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				D0509E6C271BEE670053CD71 /* CartView.swift in Sources */,
 				D095E742271EEBBC004AB621 /* CustomError+Ext.swift in Sources */,
 				D0509E69271BEE320053CD71 /* SearchView.swift in Sources */,
+				D06BC8A3272190F700BEC11B /* Meal.swift in Sources */,
 				D0509E61271BE16A0053CD71 /* TabBarIcon.swift in Sources */,
 				D095E746271EED53004AB621 /* MealRepository.swift in Sources */,
 				D0509E65271BEDFE0053CD71 /* HomeVIew.swift in Sources */,
@@ -519,6 +526,7 @@
 				D095E75F27200A7A004AB621 /* ActivityIndicator.swift in Sources */,
 				D095E76427200C8C004AB621 /* CustomColor.swift in Sources */,
 				D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */,
+				D06BC8A12721547700BEC11B /* MealsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

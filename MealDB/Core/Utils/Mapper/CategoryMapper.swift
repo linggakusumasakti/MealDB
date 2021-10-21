@@ -13,4 +13,10 @@ final class CategoryMapper {
             return Category(id: result.id ?? "", title: result.title ?? "", image: result.image ?? "", description: result.description ?? "")
         }
     }
+    
+    static func mapMealResponseToDomain(input mealsResponse: [MealResponse]) -> [Meal] {
+        return mealsResponse.map{ result in
+            return Meal(id: result.id, name: result.name, image: result.image)
+        }
+    }
 }
