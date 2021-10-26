@@ -10,7 +10,7 @@ import Combine
 
 class HomePresenter: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
-    
+    private let router = HomeRouter()
     private let homeUseCase: HomeUseCase
     
     @Published var categories: [Category] = []
@@ -61,5 +61,11 @@ class HomePresenter: ObservableObject {
                 print("MEALS \(meals)")
             })
             .store(in: &cancellables)
+    }
+    
+    func linkBuilder<Content: View>(
+        id: String,
+        @ViewBuilder content: () -> Content) -> some View {
+        NavigationLink(destination: router.makeDetailView(id: id)) { content() }
     }
 }

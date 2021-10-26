@@ -12,6 +12,7 @@ import UIKit
 protocol MealRepositoryProtocol {
     func getCategories() -> AnyPublisher<[Category], Error>
     func getFilterCategories(category: String) -> AnyPublisher<[Meal], Error>
+    func getMealDetail(id: String) -> AnyPublisher<[Meal], Error>
 }
 
 final class MealRepository {
@@ -38,6 +39,12 @@ extension MealRepository: MealRepositoryProtocol {
     
     func getFilterCategories(category: String) -> AnyPublisher<[Meal], Error> {
         return self.remote.getFilterCategories(category: category)
+            .map{ CategoryMapper.mapMealResponseToDomain(input: $0)}
+            .eraseToAnyPublisher()
+    }
+    
+    func getMealDetail(id: String) -> AnyPublisher<[Meal], Error> {
+        return self.remote.getMealDetail(id: id)
             .map{ CategoryMapper.mapMealResponseToDomain(input: $0)}
             .eraseToAnyPublisher()
     }
