@@ -44,6 +44,10 @@ extension MealRow {
                         }
                     }.buttonStyle(PlainButtonStyle())
                 }
+            } else {
+                VStack {
+                    EmptyView()
+                }.frame(maxWidth: .infinity)
             }
             
         }.padding(.horizontal, 8)

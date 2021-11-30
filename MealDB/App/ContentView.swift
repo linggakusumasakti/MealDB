@@ -10,24 +10,22 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
     var body: some View {
-        TabView {
-            NavigationView {
-              HomeView(presenter: homePresenter)
-            }.tabItem {
-              TabBarIcon(imageName: "house", title: "Home")
-            }
-            NavigationView {
-              SearchView()
-            }.tabItem {
-              TabBarIcon(imageName: "magnifyingglass", title: "Search")
-            }
-            NavigationView {
-              CartView()
-            }.tabItem {
-              TabBarIcon(imageName: "cart", title: "Cart")
-            }
-
-        }.accentColor(.red)
+        NavigationView {
+            TabView {
+                HomeView(presenter: homePresenter).tabItem {
+                    TabBarIcon(imageName: "house", title: "Home")
+                }
+                
+                SearchView().tabItem {
+                    TabBarIcon(imageName: "magnifyingglass", title: "Search")
+                }
+                
+                CartView().tabItem {
+                        TabBarIcon(imageName: "cart", title: "Cart")
+                    }
+                
+            }.accentColor(.red)
+        }
     }
 }
 
