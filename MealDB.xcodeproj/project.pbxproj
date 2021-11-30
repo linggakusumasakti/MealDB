@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03D1F2827282D9700A5D37F /* MealDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2727282D9600A5D37F /* MealDetailPresenter.swift */; };
+		D03D1F2A27282E7500A5D37F /* DetailMealInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2927282E7500A5D37F /* DetailMealInteractor.swift */; };
+		D03D1F2D272835D700A5D37F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2C272835D700A5D37F /* HomeRouter.swift */; };
+		D03D1F302728382300A5D37F /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2F2728382300A5D37F /* MealDetailView.swift */; };
+		D03D929E2755DD7600923E83 /* IngridientRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D929D2755DD7600923E83 /* IngridientRow.swift */; };
 		D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E35271BD9C20053CD71 /* MealDBApp.swift */; };
 		D0509E38271BD9C20053CD71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E37271BD9C20053CD71 /* ContentView.swift */; };
 		D0509E3A271BD9C40053CD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0509E39271BD9C40053CD71 /* Assets.xcassets */; };
@@ -58,6 +63,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D03D1F2727282D9600A5D37F /* MealDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailPresenter.swift; sourceTree = "<group>"; };
+		D03D1F2927282E7500A5D37F /* DetailMealInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealInteractor.swift; sourceTree = "<group>"; };
+		D03D1F2C272835D700A5D37F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		D03D1F2F2728382300A5D37F /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		D03D929D2755DD7600923E83 /* IngridientRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientRow.swift; sourceTree = "<group>"; };
 		D0509E32271BD9C20053CD71 /* MealDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0509E35271BD9C20053CD71 /* MealDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBApp.swift; sourceTree = "<group>"; };
 		D0509E37271BD9C20053CD71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +129,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D03D1F2527282D6F00A5D37F /* MealDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D03D1F2E2728381A00A5D37F /* View */,
+				D03D1F2627282D8B00A5D37F /* Presenter */,
+			);
+			path = MealDetail;
+			sourceTree = "<group>";
+		};
+		D03D1F2627282D8B00A5D37F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D03D1F2727282D9600A5D37F /* MealDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D03D1F2B272835C000A5D37F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D03D1F2C272835D700A5D37F /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D03D1F2E2728381A00A5D37F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D03D1F2F2728382300A5D37F /* MealDetailView.swift */,
+				D03D929D2755DD7600923E83 /* IngridientRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D0509E29271BD9C20053CD71 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +233,7 @@
 		D0509E63271BEDF10053CD71 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D03D1F2527282D6F00A5D37F /* MealDetail */,
 				D095E75D27200A5C004AB621 /* Common */,
 				D0509E6A271BEE470053CD71 /* Cart */,
 				D0509E67271BEE250053CD71 /* Search */,
@@ -200,6 +245,7 @@
 		D0509E66271BEE180053CD71 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D03D1F2B272835C000A5D37F /* Router */,
 				D095E755271EF2B0004AB621 /* Presenter */,
 				D095E754271EF2A8004AB621 /* View */,
 			);
@@ -324,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				D095E74F271EF0A1004AB621 /* HomeInteractor.swift */,
+				D03D1F2927282E7500A5D37F /* DetailMealInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -515,6 +562,7 @@
 				D0509E6C271BEE670053CD71 /* CartView.swift in Sources */,
 				D095E742271EEBBC004AB621 /* CustomError+Ext.swift in Sources */,
 				D0509E69271BEE320053CD71 /* SearchView.swift in Sources */,
+				D03D1F302728382300A5D37F /* MealDetailView.swift in Sources */,
 				D06BC8A3272190F700BEC11B /* Meal.swift in Sources */,
 				D0509E61271BE16A0053CD71 /* TabBarIcon.swift in Sources */,
 				D095E746271EED53004AB621 /* MealRepository.swift in Sources */,
@@ -525,7 +573,9 @@
 				D095E759271FFE92004AB621 /* CategoryRow.swift in Sources */,
 				D095E735271EE690004AB621 /* CategoriesResponse.swift in Sources */,
 				D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */,
+				D03D1F2A27282E7500A5D37F /* DetailMealInteractor.swift in Sources */,
 				D06BC8A72721ACE800BEC11B /* GridStack.swift in Sources */,
+				D03D1F2827282D9700A5D37F /* MealDetailPresenter.swift in Sources */,
 				D095E74D271EEF08004AB621 /* CategoryMapper.swift in Sources */,
 				D095E73F271EE9D6004AB621 /* ApiCall.swift in Sources */,
 				D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */,
@@ -534,6 +584,8 @@
 				D095E75F27200A7A004AB621 /* ActivityIndicator.swift in Sources */,
 				D095E76427200C8C004AB621 /* CustomColor.swift in Sources */,
 				D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */,
+				D03D1F2D272835D700A5D37F /* HomeRouter.swift in Sources */,
+				D03D929E2755DD7600923E83 /* IngridientRow.swift in Sources */,
 				D06BC8A12721547700BEC11B /* MealsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
