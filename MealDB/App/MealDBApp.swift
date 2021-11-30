@@ -13,13 +13,16 @@ struct MealDBApp: App {
     let injection = Injection()
     
     let homeUseCase = Injection.init().provideHome()
+    let searchUseCase = Injection.init().provideSearhMeal()
     
     var homePresenter: HomePresenter{ HomePresenter(homeUseCase: homeUseCase)}
+    var searchPresenter: SearchPresenter { SearchPresenter(searchUseCase: searchUseCase)}
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(homePresenter)
+                .environmentObject(searchPresenter)
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
+    @EnvironmentObject var searchPresenter: SearchPresenter
     var body: some View {
         NavigationView {
             TabView {
@@ -16,7 +17,7 @@ struct ContentView: View {
                     TabBarIcon(imageName: "house", title: "Home")
                 }
                 
-                SearchView().tabItem {
+                SearchView(presenter: searchPresenter).tabItem {
                     TabBarIcon(imageName: "magnifyingglass", title: "Search")
                 }
                 

@@ -24,4 +24,9 @@ final class Injection {
         let repository = provideRepository()
         return DetailMealInteractor(repository: repository, id: id)
     }
+    
+    func provideSearhMeal() -> SearchUseCase {
+        let repository = provideRepository()
+        return SearchInteractor(repository: repository)
+    }
 }

@@ -12,6 +12,9 @@
 		D03D1F2D272835D700A5D37F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2C272835D700A5D37F /* HomeRouter.swift */; };
 		D03D1F302728382300A5D37F /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F2F2728382300A5D37F /* MealDetailView.swift */; };
 		D03D929E2755DD7600923E83 /* IngridientRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D929D2755DD7600923E83 /* IngridientRow.swift */; };
+		D03D92A0275607C600923E83 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D929F275607C600923E83 /* SearchInteractor.swift */; };
+		D03D92A4275609B700923E83 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D92A3275609B700923E83 /* SearchPresenter.swift */; };
+		D03D92A62756396D00923E83 /* MealSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D92A52756396D00923E83 /* MealSearchRow.swift */; };
 		D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E35271BD9C20053CD71 /* MealDBApp.swift */; };
 		D0509E38271BD9C20053CD71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E37271BD9C20053CD71 /* ContentView.swift */; };
 		D0509E3A271BD9C40053CD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0509E39271BD9C40053CD71 /* Assets.xcassets */; };
@@ -68,6 +71,9 @@
 		D03D1F2C272835D700A5D37F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		D03D1F2F2728382300A5D37F /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		D03D929D2755DD7600923E83 /* IngridientRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientRow.swift; sourceTree = "<group>"; };
+		D03D929F275607C600923E83 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		D03D92A3275609B700923E83 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		D03D92A52756396D00923E83 /* MealSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSearchRow.swift; sourceTree = "<group>"; };
 		D0509E32271BD9C20053CD71 /* MealDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0509E35271BD9C20053CD71 /* MealDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBApp.swift; sourceTree = "<group>"; };
 		D0509E37271BD9C20053CD71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +169,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D03D92A1275609A000923E83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0509E68271BEE320053CD71 /* SearchView.swift */,
+				D03D92A52756396D00923E83 /* MealSearchRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D03D92A2275609AA00923E83 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D03D92A3275609B700923E83 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D0509E29271BD9C20053CD71 = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +278,8 @@
 		D0509E67271BEE250053CD71 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D0509E68271BEE320053CD71 /* SearchView.swift */,
+				D03D92A2275609AA00923E83 /* Presenter */,
+				D03D92A1275609A000923E83 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -371,6 +395,7 @@
 			children = (
 				D095E74F271EF0A1004AB621 /* HomeInteractor.swift */,
 				D03D1F2927282E7500A5D37F /* DetailMealInteractor.swift */,
+				D03D929F275607C600923E83 /* SearchInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -575,6 +600,7 @@
 				D095E737271EE6F9004AB621 /* RemoteDataSource.swift in Sources */,
 				D03D1F2A27282E7500A5D37F /* DetailMealInteractor.swift in Sources */,
 				D06BC8A72721ACE800BEC11B /* GridStack.swift in Sources */,
+				D03D92A4275609B700923E83 /* SearchPresenter.swift in Sources */,
 				D03D1F2827282D9700A5D37F /* MealDetailPresenter.swift in Sources */,
 				D095E74D271EEF08004AB621 /* CategoryMapper.swift in Sources */,
 				D095E73F271EE9D6004AB621 /* ApiCall.swift in Sources */,
@@ -582,7 +608,9 @@
 				D095E74A271EEDB8004AB621 /* Category.swift in Sources */,
 				D095E750271EF0A1004AB621 /* HomeInteractor.swift in Sources */,
 				D095E75F27200A7A004AB621 /* ActivityIndicator.swift in Sources */,
+				D03D92A0275607C600923E83 /* SearchInteractor.swift in Sources */,
 				D095E76427200C8C004AB621 /* CustomColor.swift in Sources */,
+				D03D92A62756396D00923E83 /* MealSearchRow.swift in Sources */,
 				D095E757271EF2D4004AB621 /* HomePresenter.swift in Sources */,
 				D03D1F2D272835D700A5D37F /* HomeRouter.swift in Sources */,
 				D03D929E2755DD7600923E83 /* IngridientRow.swift in Sources */,

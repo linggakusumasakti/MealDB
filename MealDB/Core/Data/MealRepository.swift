@@ -13,6 +13,7 @@ protocol MealRepositoryProtocol {
     func getCategories() -> AnyPublisher<[Category], Error>
     func getFilterCategories(category: String) -> AnyPublisher<[Meal], Error>
     func getMealDetail(id: String) -> AnyPublisher<[Meal], Error>
+    func getSearchMeal(query: String) -> AnyPublisher<[Meal], Error>
 }
 
 final class MealRepository {
@@ -45,6 +46,12 @@ extension MealRepository: MealRepositoryProtocol {
     
     func getMealDetail(id: String) -> AnyPublisher<[Meal], Error> {
         return self.remote.getMealDetail(id: id)
+            .map{ CategoryMapper.mapMealResponseToDomain(input: $0)}
+            .eraseToAnyPublisher()
+    }
+    
+    func getSearchMeal(query: String) -> AnyPublisher<[Meal], Error> {
+        return self.remote.getSearchMeal(query: query)
             .map{ CategoryMapper.mapMealResponseToDomain(input: $0)}
             .eraseToAnyPublisher()
     }

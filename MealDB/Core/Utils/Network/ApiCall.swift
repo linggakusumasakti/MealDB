@@ -20,6 +20,7 @@ enum Endpoints {
         case categories
         case filterCategories
         case detailMeal
+        case search
         
         public var url: String {
             switch self {
@@ -29,6 +30,8 @@ enum Endpoints {
                 return "\(APICall.baseUrl)filter.php?c="
             case .detailMeal:
                 return "\(APICall.baseUrl)lookup.php?i="
+            case .search:
+                return "\(APICall.baseUrl)search.php?s="
             }
         }
     }
