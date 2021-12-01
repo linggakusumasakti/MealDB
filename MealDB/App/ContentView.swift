@@ -21,12 +21,10 @@ struct ContentView: View {
                     TabBarIcon(imageName: "magnifyingglass", title: "Search")
                 }
                 
-                CartView().tabItem {
-                        TabBarIcon(imageName: "cart", title: "Cart")
-                    }
+              
                 
             }.accentColor(.red)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
