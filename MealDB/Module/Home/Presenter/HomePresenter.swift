@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import FirebaseAuth
 
 class HomePresenter: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
@@ -18,10 +19,28 @@ class HomePresenter: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
+    @Published var session: User?
+    var isLoggedIn: Bool { session != nil}
+    var handle: AuthStateDidChangeListenerHandle?
+    
     @Published var categorySelected: String = "Beef"
     
     init(homeUseCase: HomeUseCase) {
         self.homeUseCase = homeUseCase
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                self.session = user
+                print("NAME \(String(describing: user.displayName))")
+            } else {
+                self.session = nil
+            }
+        }
+    }
+    
+    deinit {
+        if let handle = handle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
     }
     
     func getCategories(){
@@ -66,6 +85,6 @@ class HomePresenter: ObservableObject {
     func linkBuilder<Content: View>(
         id: String,
         @ViewBuilder content: () -> Content) -> some View {
-        NavigationLink(destination: router.makeDetailView(id: id)) { content() }
-    }
+            NavigationLink(destination: router.makeDetailView(id: id)) { content() }
+        }
 }

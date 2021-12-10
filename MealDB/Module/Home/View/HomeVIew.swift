@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct HomeView: View {
     
@@ -24,7 +25,9 @@ struct HomeView: View {
                 spacer
                 mealView
             }
-        }.onAppear{
+        }
+        .addPartialSheet()
+        .onAppear{
             self.presenter.getCategories()
             self.presenter.getFilterCategories(category: self.presenter.categorySelected)
         }
