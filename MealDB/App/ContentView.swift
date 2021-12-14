@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
     @EnvironmentObject var searchPresenter: SearchPresenter
+    @EnvironmentObject var favoritePresenter: FavoritePreseneter
     @State var selected = 0
     
     var body: some View {
@@ -20,10 +21,12 @@ struct ContentView: View {
                         
                         HomeView(presenter: homePresenter)
                         
-                    } else {
+                    } else if self.selected == 1 {
                         
                         SearchView(presenter: searchPresenter)
                         
+                    } else {
+                        FavoriteView(presenter: favoritePresenter)
                     }
                 }
                 
@@ -59,16 +62,27 @@ struct FloatingTabBar: View {
             
             HStack {
                 
-                Spacer()
-                
                 Button(action: {
                     self.selected = 0
                 }) {
                     Image(systemName: "house")
                         .resizable()
                         .frame(width: 25, height: 25, alignment: .center)
-                        .foregroundColor(self.selected == 0 ? .red : .gray)
+                        .foregroundColor(self.selected == 0 ? .white : .gray)
+                    
+                    if selected == 0 {
+                        Text("Home")
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    
+                    
                 }
+                .padding()
+                .background(self.selected == 0 ? Color.red : Color.white)
+                .clipShape(Capsule())
+                .padding()
+                .animation(Animation.spring())
                 
                 Spacer()
                 
@@ -78,19 +92,55 @@ struct FloatingTabBar: View {
                     Image(systemName: "magnifyingglass")
                         .resizable()
                         .frame(width: 25, height: 25, alignment: .center)
-                        .foregroundColor(self.selected == 1 ? .red : .gray)
+                        .foregroundColor(self.selected == 1 ? .white : .gray)
+                    
+                    if selected == 1 {
+                        Text("Search")
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    
+                    
                 }
+                .padding()
+                .background(self.selected == 1 ? Color.red : Color.white)
+                .clipShape(Capsule())
+                .padding()
+                .animation(Animation.spring())
+                
                 
                 Spacer()
                 
+                Button(action: {
+                    self.selected = 2
+                }) {
+                    Image(systemName: "suit.heart.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25, alignment: .center)
+                        .foregroundColor(self.selected == 2 ? .white : .gray)
+                    
+                    if selected == 2 {
+                        Text("Favorite")
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    
+                    
+                }
+                .padding()
+                .background(self.selected == 2 ? Color.red : Color.white)
+                .clipShape(Capsule())
+                .padding()
+                .animation(Animation.spring())
+                
             }
             
-        }.padding(16)
-            .background(Color.white)
-            .clipShape(Capsule())
-            .shadow(color: .gray, radius: 8)
-            .padding(22)
-            .frame(maxHeight: .infinity, alignment: .bottom)
+        }
+        .background(Color.white)
+        .clipShape(Capsule())
+        .shadow(color: .gray, radius: 8)
+        .padding(.horizontal, 16)
+        .frame(maxHeight: .infinity, alignment: .bottom)
     }
 }
 

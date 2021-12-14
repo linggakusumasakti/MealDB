@@ -19,12 +19,15 @@ struct MealDetailView: View {
             } else {
                 ScrollView(.vertical, showsIndicators: false){
                     header
+                    actionMenu
+                    content
                 }
-                floatingButton
+                
             }
             
         }.onAppear{
             presenter.getMealDetail()
+            presenter.getFavorite()
         }.navigationBarTitle(Text(self.presenter.nameMeal), displayMode: .large)
         
     }
@@ -50,6 +53,11 @@ extension MealDetailView {
                 .transition(.fade(duration: 0.5))
                 .scaledToFit()
             
+        }
+    }
+    
+    var content: some View {
+        VStack(alignment: .leading) {
             Text("Ingridients")
                 .font(.title3)
                 .bold()
@@ -76,40 +84,62 @@ extension MealDetailView {
         }
     }
     
-    var floatingButton: some View {
-        VStack {
+    var actionMenu: some View {
+        HStack {
+            
             spacer
-                
-                Button(action: {
-                    let youtubeId = self.presenter.youtubeId
-                      var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
-                    if UIApplication.shared.canOpenURL(youtubeUrl as URL){
-                        UIApplication.shared.open(youtubeUrl as URL)
-                      } else{
-                          youtubeUrl = NSURL(string:self.presenter.youtubeUrl)!
-                          UIApplication.shared.open(youtubeUrl as URL)
-                      }
-                }){
-                    HStack {
-                        Text("Watch Tutorial")
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                    spacer
-                        
-                        Image(systemName: "video.fill")
-                            .foregroundColor(.white)
-                            
-                    }
-                    .padding(16)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.red)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
-                    
+            
+            Button(action: {
+                self.presenter.addFavorite()
+            }) {
+                VStack {
+                    Image(systemName: presenter.isFavorite ? "suit.heart.fill" : "suit.heart")
+                        .resizable()
+                        .foregroundColor(.red)
+                        .frame(width: 25, height: 25, alignment: .center)
+                    Text("Favorite")
+                        .foregroundColor(.black)
                 }
-            }.padding(16)
-
+            }
+            
+            spacer
+            
+            Button(action: {
+                let youtubeId = self.presenter.youtubeId
+                var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+                if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+                    UIApplication.shared.open(youtubeUrl as URL)
+                } else{
+                    youtubeUrl = NSURL(string:self.presenter.youtubeUrl)!
+                    UIApplication.shared.open(youtubeUrl as URL)
+                }
+            }) {
+                VStack {
+                    Image(systemName: "video")
+                        .resizable()
+                        .foregroundColor(.red)
+                        .frame(width: 25, height: 25, alignment: .center)
+                    Text("Tutorial")
+                        .foregroundColor(.black)
+                }
+            }
+            
+            spacer
+            
+            Button(action: {
+                
+            }) {
+                VStack {
+                    Image(systemName: "bell")
+                        .resizable()
+                        .foregroundColor(.red)
+                        .frame(width: 25, height: 25, alignment: .center)
+                    Text("Notification")
+                        .foregroundColor(.black)
+                }
+            }
+            
+            spacer
+        }
     }
 }

@@ -10,6 +10,8 @@ import Combine
 
 protocol DetailMealUseCase {
     func getMealDetail() -> AnyPublisher<[Meal], Error>
+    func setFavorite(meal:Meal) -> AnyPublisher<Bool, Error>
+    func getFavorite() -> AnyPublisher<Meal, Error>
 }
 
 class DetailMealInteractor: DetailMealUseCase {
@@ -24,5 +26,13 @@ class DetailMealInteractor: DetailMealUseCase {
     
     func getMealDetail() -> AnyPublisher<[Meal], Error> {
         return repository.getMealDetail(id: id)
+    }
+    
+    func setFavorite(meal: Meal) -> AnyPublisher<Bool, Error> {
+        return repository.setFavorite(favorite: meal)
+    }
+    
+    func getFavorite() -> AnyPublisher<Meal, Error> {
+        return repository.getFavorite(id: id)
     }
 }

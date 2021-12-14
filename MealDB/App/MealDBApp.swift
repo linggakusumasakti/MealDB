@@ -14,15 +14,18 @@ struct MealDBApp: App {
     
     let homeUseCase = Injection.init().provideHome()
     let searchUseCase = Injection.init().provideSearhMeal()
+    let favoriteUseCase = Injection.init().provideFavorite()
     
     var homePresenter: HomePresenter{ HomePresenter(homeUseCase: homeUseCase)}
     var searchPresenter: SearchPresenter { SearchPresenter(searchUseCase: searchUseCase)}
+    var favoritePresenter: FavoritePreseneter { FavoritePreseneter(useCase: favoriteUseCase)}
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(homePresenter)
                 .environmentObject(searchPresenter)
+                .environmentObject(favoritePresenter)
         }
     }
 }

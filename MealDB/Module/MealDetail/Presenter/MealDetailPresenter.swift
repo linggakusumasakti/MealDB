@@ -7,7 +7,8 @@
 
 import SwiftUI
 import Combine
-import MapKit
+import RealmSwift
+
 
 class MealDetailPresenter: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
@@ -24,6 +25,7 @@ class MealDetailPresenter: ObservableObject {
     @Published var ingridients: [String] = []
     @Published var isLoading: Bool = false
     @Published var isError: Bool = false
+    @Published var isFavorite: Bool = false
     
     init(useCase: DetailMealUseCase){
         self.useCase = useCase
@@ -60,8 +62,38 @@ class MealDetailPresenter: ObservableObject {
                 self.youtubeUrl = meals[0].youtube
                 self.youtubeId = self.youtubeUrl.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
                 
-                print("DETAIL MEALS \(self.youtubeId)")
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
             })
             .store(in: &cancellables)
+    }
+    
+    func addFavorite(){
+        useCase.setFavorite(meal: self.meals[0])
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: {completion in
+                switch completion {
+                case .failure:
+                    break
+                case .finished:
+                    break
+                }
+            }, receiveValue: { isFavorite in
+                self.isFavorite = isFavorite
+            }).store(in: &cancellables)
+    }
+    
+    func getFavorite(){
+        useCase.getFavorite()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: {completion in
+                switch completion {
+                case .failure:
+                    self.isFavorite = false
+                case .finished:
+                    self.isFavorite = true
+                }
+            }, receiveValue: {meal in
+                print("CHECK \(meal)")
+            }).store(in: &cancellables)
     }
 }
