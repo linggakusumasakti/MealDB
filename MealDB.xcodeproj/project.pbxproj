@@ -15,6 +15,8 @@
 		D03D92A0275607C600923E83 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D929F275607C600923E83 /* SearchInteractor.swift */; };
 		D03D92A4275609B700923E83 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D92A3275609B700923E83 /* SearchPresenter.swift */; };
 		D03D92A62756396D00923E83 /* MealSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D92A52756396D00923E83 /* MealSearchRow.swift */; };
+		D04110572769BFA6003CC7E2 /* DateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04110562769BFA6003CC7E2 /* DateTimeView.swift */; };
+		D041105A2769C271003CC7E2 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D04110592769C271003CC7E2 /* PartialSheet */; };
 		D0509E36271BD9C20053CD71 /* MealDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E35271BD9C20053CD71 /* MealDBApp.swift */; };
 		D0509E38271BD9C20053CD71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0509E37271BD9C20053CD71 /* ContentView.swift */; };
 		D0509E3A271BD9C40053CD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0509E39271BD9C40053CD71 /* Assets.xcassets */; };
@@ -81,6 +83,7 @@
 		D03D929F275607C600923E83 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		D03D92A3275609B700923E83 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		D03D92A52756396D00923E83 /* MealSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSearchRow.swift; sourceTree = "<group>"; };
+		D04110562769BFA6003CC7E2 /* DateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeView.swift; sourceTree = "<group>"; };
 		D0509E32271BD9C20053CD71 /* MealDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0509E35271BD9C20053CD71 /* MealDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBApp.swift; sourceTree = "<group>"; };
 		D0509E37271BD9C20053CD71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 				D0AF580127684F20007A2167 /* Realm in Frameworks */,
 				D095E75C271FFEF9004AB621 /* SDWebImageSwiftUI in Frameworks */,
 				D095E73A271EE7C4004AB621 /* Alamofire in Frameworks */,
+				D041105A2769C271003CC7E2 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +183,7 @@
 			children = (
 				D03D1F2F2728382300A5D37F /* MealDetailView.swift */,
 				D03D929D2755DD7600923E83 /* IngridientRow.swift */,
+				D04110562769BFA6003CC7E2 /* DateTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 				D095E75B271FFEF9004AB621 /* SDWebImageSwiftUI */,
 				D0AF580027684F20007A2167 /* Realm */,
 				D0AF580227684F20007A2167 /* RealmSwift */,
+				D04110592769C271003CC7E2 /* PartialSheet */,
 			);
 			productName = MealDB;
 			productReference = D0509E32271BD9C20053CD71 /* MealDB.app */;
@@ -594,6 +600,7 @@
 				D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D095E75A271FFEF9004AB621 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				D0AF57FF27684F20007A2167 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				D04110582769C271003CC7E2 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = D0509E33271BD9C20053CD71 /* Products */;
 			projectDirPath = "";
@@ -640,6 +647,7 @@
 				D095E753271EF17A004AB621 /* Injection.swift in Sources */,
 				D095E742271EEBBC004AB621 /* CustomError+Ext.swift in Sources */,
 				D0509E69271BEE320053CD71 /* SearchView.swift in Sources */,
+				D04110572769BFA6003CC7E2 /* DateTimeView.swift in Sources */,
 				D03D1F302728382300A5D37F /* MealDetailView.swift in Sources */,
 				D06BC8A3272190F700BEC11B /* Meal.swift in Sources */,
 				D0509E61271BE16A0053CD71 /* TabBarIcon.swift in Sources */,
@@ -1018,6 +1026,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D04110582769C271003CC7E2 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1045,6 +1061,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D04110592769C271003CC7E2 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D04110582769C271003CC7E2 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
 		D095E739271EE7C4004AB621 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D095E738271EE7C4004AB621 /* XCRemoteSwiftPackageReference "Alamofire" */;

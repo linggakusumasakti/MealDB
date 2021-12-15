@@ -7,10 +7,12 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import PartialSheet
 
 struct MealDetailView: View {
     @ObservedObject var presenter: MealDetailPresenter
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var showingSheet = false
     
     var body: some View {
         ZStack {
@@ -28,7 +30,8 @@ struct MealDetailView: View {
         }.onAppear{
             presenter.getMealDetail()
             presenter.getFavorite()
-        }.navigationBarTitle(Text(self.presenter.nameMeal), displayMode: .large)
+        }.addPartialSheet()
+        .navigationBarTitle(Text(self.presenter.nameMeal), displayMode: .large)
         
     }
 }
@@ -127,6 +130,7 @@ extension MealDetailView {
             spacer
             
             Button(action: {
+                self.showingSheet = true
                 
             }) {
                 VStack {
@@ -137,6 +141,9 @@ extension MealDetailView {
                     Text("Notification")
                         .foregroundColor(.black)
                 }
+            }
+            .partialSheet(isPresented: $showingSheet) {
+                DateTimeView(presenter: self.presenter)
             }
             
             spacer

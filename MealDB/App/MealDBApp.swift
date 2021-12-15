@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 @main
 struct MealDBApp: App {
@@ -19,6 +20,7 @@ struct MealDBApp: App {
     var homePresenter: HomePresenter{ HomePresenter(homeUseCase: homeUseCase)}
     var searchPresenter: SearchPresenter { SearchPresenter(searchUseCase: searchUseCase)}
     var favoritePresenter: FavoritePreseneter { FavoritePreseneter(useCase: favoriteUseCase)}
+    let sheetManager: PartialSheetManager = PartialSheetManager()
     
     var body: some Scene {
         WindowGroup {
@@ -26,6 +28,7 @@ struct MealDBApp: App {
                 .environmentObject(homePresenter)
                 .environmentObject(searchPresenter)
                 .environmentObject(favoritePresenter)
+                .environmentObject(sheetManager)
         }
     }
 }
