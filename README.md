@@ -2,6 +2,7 @@
 
 ### Screenshots
 
-![Main](ScreenShots/main.png)
+![Main](Screenshots/home.png)
 ![Main](ScreenShots/detail.png)
+![Main](ScreenShots/reminder.png)
 ![Main](ScreenShots/search.png)
