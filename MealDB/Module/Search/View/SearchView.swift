@@ -22,7 +22,7 @@ struct SearchView: View {
             } else {
                 content
             }
-        }
+        }.navigationBarTitle(Text("Search Meal"), displayMode: .automatic)
         
     }
 }
@@ -42,12 +42,6 @@ extension SearchView {
     
     var header: some View {
         VStack {
-            Text("Search Meal")
-                .font(.title)
-                .bold()
-                .foregroundColor(.black)
-                .padding(.horizontal,8)
-                .frame(maxWidth: .infinity, alignment: .leading)
             
             TextField("Search", text: $presenter.query)
                 .cornerRadius(16)
